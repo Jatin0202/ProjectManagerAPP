@@ -1,0 +1,51 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+         New Project??
+        </h1>
+        <h4><div class="text-center mb-3">Don't Worry! Create it and we will remind you of that.</div></h4>
+        <%- include('../partials/messages.ejs') %>
+        <form action="/projects/create" method="POST">
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input
+              type="Name"
+              id="Name"
+              name="Name"
+              class="form-control"
+              placeholder="Enter Title of Project"
+              value="<%= typeof Name != 'undefined' ? Name : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <input
+              type="Description"
+              id="Description"
+              name="Description"
+              class="form-control"
+              placeholder="Enter Description of Project"
+              value="<%= typeof Description != 'undefined' ? Description : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Status">Status</label>
+            <select
+              type="Status"
+              id="Status"
+              name="Status"
+              class="form-control">
+              <option value="Completed">Completed</option>
+              <option value="Pending">Pending</option>  
+            </select>
+            
+          </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <a href="/projects/create" class="btn btn-secondary btn-block">Have a new project?? Create it here and we will remind you of that.</a>
+        </div>
+        <br><br>
+        <% if(typeof projects!= 'undefined') { %>
+            <% projects.forEach(function(project) { %>
+                <div class="card card-body">
+                    <div class="border rounded-lg .bg-secondary" height="40px">
+                        <h4 class="text-center"><%= project.Name %></h4>
+                    </div>
+                    <br>
+                    <div class="border rounded-lg .bg-secondary" height="40px">
+                        <h6><%= project.Description %></h6>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary btn-block"><%= project.Status %></button>
+                    <br>
+                    <a href="/projects/<%= project._id %>" class="btn btn-secondary btn-block">Edit</a>
+                </div>
+                <br><br>
+            <% }); %>           
+        <% } %>
+    </div>
+</div>
+
